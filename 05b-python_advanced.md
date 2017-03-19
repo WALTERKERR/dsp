@@ -60,13 +60,28 @@ bryanma@upenn.edu
 ### Part III - Dictionary
 
 #### Q6.  Create a dictionary in the below format:
-```
+```python
 faculty_dict = { 'Ellenberg': [['Ph.D.', 'Professor', 'sellenbe@upenn.edu'], ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu']],
               'Li': [['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu'], ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu'], ['Ph.D.', 'Professor', 'hongzhe@upenn.edu']]}
 ```
 Print the first 3 key and value pairs of the dictionary:
 
->> REPLACE THIS WITH YOUR RESPONSE
+>> Is this a trick question?  Python dictionaries don't have order.
+
+Anyhow, here is the dictionary I created:
+
+`faculty_dict = { 'Ellenberg': [['Ph.D.', 'Professor', 'sellenbe@upenn.edu'], ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu']],'Li': [['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu'], ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu'], ['Ph.D.', 'Professor', 'hongzhe@upenn.edu']],'Smith': ['Ph.D.', 'Professor', 'smith@email.haas.berkeley.edu'],'Stevens':['Ph.D.', 'Professor', 'stevens@email.columbia.edu']}`
+
+The first three key-value pairs are:
+Ellenberg: [PHD, Professor, sellenbe@upenn.edu],[PHD, Professor, jellenbe@mail.upenn.edu]
+Li: [PHD, Assistant Professor, liy3@email.chop.edu],[PHD,Associate Professor, mingyao@mail.med.upenn.edu],[PHD, Professor, hongzhe@upenn.edu]
+Smith: [PHD, Professor, smith@email.haas.berkeley.edu]
+
+I used the following code to find these k,v pairs:
+```python
+for key in sorted(faculty_dict)[:3]:
+    print (key, faculty_dict[key])
+```
 
 #### Q7.  The previous dictionary does not have the best design for keys.  Create a new dictionary with keys as:
 
