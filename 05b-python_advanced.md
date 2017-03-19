@@ -95,7 +95,18 @@ professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn
 
 Print the first 3 key and value pairs of the dictionary:
 
->> REPLACE THIS WITH YOUR RESPONSE
+```python
+famous_people_dict_two = {('Bill', 'Clinton'): ['JD', 'Politician', 'Arkansas'], ('George', 'Clinton'): ['High School', 'Musician', 'North Carolina'], ('John', 'Kennedy'): ['JD', 'Politician', 'Massachusetts'], ('William','Kennedy'): ['BA', 'Writer', 'New York'], ('Steve','Kerr'): ['BA', 'Athlete', 'Lebanon'] }
+
+for key in sorted(famous_people_dict_two)[:3]:
+    print (key, famous_people_dict_two[key])
+```
+Yields:
+```
+('Bill', 'Clinton') ['JD', 'Politician', 'Arkansas']
+('George', 'Clinton') ['High School', 'Musician', 'North Carolina']
+('John', 'Kennedy') ['JD', 'Politician', 'Massachusetts']
+```
 
 #### Q8.  It looks like the current dictionary is printing by first name.  Print out the dictionary key value pairs based on alphabetical orders of the last name of the professors
 
