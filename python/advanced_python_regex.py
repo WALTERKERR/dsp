@@ -1,5 +1,8 @@
 PLACE YOUR CODE HERE
 
+import csv
+import re
+
 ### TO DETERMINE FREQUENCY OF DEGREES
 with open('faculty.csv', 'r') as facultylist:
     new_cont = {}
@@ -12,7 +15,7 @@ with open('faculty.csv', 'r') as facultylist:
     container = []
     for row in reader:
         container.append(row[0].replace('.','').split(',')[1].split(' '))
-    print(container)
+    # print(container)
     for element in container:
         for item in element:
             addToList(item)
@@ -58,7 +61,7 @@ with open('faculty.csv', 'r') as facultylist:
               new_cont.append(match)
       print(new_cont)
 
-## TO DETERMINE FREQUENCY OF EMAIL DOMAIN NAMES
+## TO DETERMINE FREQUENCY OF DOMAIN NAMES
 
 with open('faculty.csv', 'r') as facultylist:
       new_cont = {}
