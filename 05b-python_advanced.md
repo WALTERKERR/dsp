@@ -19,22 +19,30 @@ This data is available in this file:  [faculty.csv](python/faculty.csv)
 
 ####Q1. Find how many different degrees there are, and their frequencies: Ex:  PhD, ScD, MD, MPH, BSEd, MS, JD, etc.
 
->> REPLACE THIS WITH YOUR RESPONSE
+```python
+{'ScD': 6, 'PhD': 31, 'MD': 1, 'MPH': 2, 'BSEd': 1, 'MS': 2, 'JD': 1, 'MA': 1}
+```
 
 
 #### Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
 
->> REPLACE THIS WITH YOUR RESPONSE
+```python
+{'Associate Professor': 12, 'Professor': 13, 'Assistant Professor': 12}
+```
 
 
 #### Q3. Search for email addresses and put them in a list.  Print the list of email addresses.
 
->> REPLACE THIS WITH YOUR RESPONSE
+```python
+['bellamys@mail.med.upenn.edu', 'warren@upenn.edu', 'bryanma@upenn.edu', 'jinboche@upenn.edu', 'sellenbe@upenn.edu', 'jellenbe@mail.med.upenn.edu', 'ruifeng@upenn.edu', 'bcfrench@mail.med.upenn.edu', 'pgimotty@upenn.edu', 'wguo@mail.med.upenn.edu', 'hsu9@mail.med.upenn.edu', 'rhubb@mail.med.upenn.edu', 'whwang@mail.med.upenn.edu', 'mjoffe@mail.med.upenn.edu', 'jrlandis@mail.med.upenn.edu', 'liy3@email.chop.edu', 'mingyao@mail.med.upenn.edu', 'hongzhe@upenn.edu', 'rlocalio@upenn.edu', 'nanditam@mail.med.upenn.edu', 'knashawn@mail.med.upenn.edu', 'propert@mail.med.upenn.edu', 'mputt@mail.med.upenn.edu', 'sratclif@upenn.edu', 'michross@upenn.edu', 'jaroy@mail.med.upenn.edu', 'msammel@cceb.med.upenn.edu', 'shawp@upenn.edu', 'rshi@mail.med.upenn.edu', 'hshou@mail.med.upenn.edu', 'jshults@mail.med.upenn.edu', 'alisaste@mail.med.upenn.edu', 'atroxel@mail.med.upenn.edu', 'rxiao@mail.med.upenn.edu', 'sxie@mail.med.upenn.edu', 'dxie@upenn.edu', 'weiyang@mail.med.upenn.edu']
+```
 
 
 #### Q4. Find how many different email domains there are (Ex:  mail.med.upenn.edu, upenn.edu, email.chop.edu, etc.).  Print the list of unique email domains.
 
->> REPLACE THIS WITH YOUR RESPONSE
+```python
+{'mail.med.upenn.edu': 23, 'upenn.edu': 12, 'email.chop.edu': 1, 'cceb.med.upenn.edu': 1}
+```
 
 Place your code in this file: [advanced_python_regex.py](python/advanced_python_regex.py)
 
@@ -60,13 +68,32 @@ bryanma@upenn.edu
 ### Part III - Dictionary
 
 #### Q6.  Create a dictionary in the below format:
-```
+```python
 faculty_dict = { 'Ellenberg': [['Ph.D.', 'Professor', 'sellenbe@upenn.edu'], ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu']],
               'Li': [['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu'], ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu'], ['Ph.D.', 'Professor', 'hongzhe@upenn.edu']]}
 ```
 Print the first 3 key and value pairs of the dictionary:
 
->> REPLACE THIS WITH YOUR RESPONSE
+Is this a trick question?  Python dictionaries don't have order.
+
+Anyhow, here is the dictionary I created:
+```python
+famous_people_dict = { 'Clinton': [['JD', 'Politician','Arkansas'], ['High School', 'Musician','North Carolina']],
+              'Kennedy': [['JD', 'Politician', 'Massachusetts'], ['BA','Writer','New York']],
+              'Kerr' :['BA','Athlete','Lebanon']
+              }
+```
+I used the following code to find these k,v pairs:
+```python
+for key in sorted(faculty_dict)[:3]:
+    print (key, faculty_dict[key])
+```
+Yielding:
+```python
+Clinton [['JD', 'Politician', 'Arkansas'], ['High School', 'Musician', 'North Carolina']]
+Kennedy [['JD', 'Politician', 'Massachusetts'], ['BA', 'Writer', 'New York']]
+Kerr ['BA', 'Athlete', 'Lebanon']
+```
 
 #### Q7.  The previous dictionary does not have the best design for keys.  Create a new dictionary with keys as:
 
@@ -76,11 +103,28 @@ professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn
 
 Print the first 3 key and value pairs of the dictionary:
 
->> REPLACE THIS WITH YOUR RESPONSE
+```python
+famous_people_dict_two = {('Bill', 'Clinton'): ['JD', 'Politician', 'Arkansas'], ('George', 'Clinton'): ['High School', 'Musician', 'North Carolina'], ('John', 'Kennedy'): ['JD', 'Politician', 'Massachusetts'], ('William','Kennedy'): ['BA', 'Writer', 'New York'], ('Steve','Kerr'): ['BA', 'Athlete', 'Lebanon'] }
+
+for key in sorted(famous_people_dict_two)[:3]:
+    print (key, famous_people_dict_two[key])
+```
+Yields:
+```
+('Bill', 'Clinton') ['JD', 'Politician', 'Arkansas']
+('George', 'Clinton') ['High School', 'Musician', 'North Carolina']
+('John', 'Kennedy') ['JD', 'Politician', 'Massachusetts']
+```
 
 #### Q8.  It looks like the current dictionary is printing by first name.  Print out the dictionary key value pairs based on alphabetical orders of the last name of the professors
 
->> REPLACE THIS WITH YOUR RESPONSE
+```python
+print(OrderedDict(sorted(professor_dict.items(), key=lambda name: name[0][1])))
+```
+yields:
+```python
+OrderedDict([(('Susan', 'Ellenberg'), ['Ph.D.', 'Professor', 'sellenbe@upenn.edu']), (('Jonas', 'Ellenberg'), ['Ph.D.', 'Professor', 'jellenbe@mail.med.upenn.edu']), (('Yimei', 'Li'), ['Ph.D.', 'Assistant Professor', 'liy3@email.chop.edu']), (('Mingyao', 'Li'), ['Ph.D.', 'Associate Professor', 'mingyao@mail.med.upenn.edu']), (('Hongzhe', 'Li'), ['Ph.D.', 'Professor', 'hongzhe@upenn.edu'])])
+```
 
 Place your code in this file: [advanced_python_dict.py](python/advanced_python_dict.py)
 
