@@ -3,6 +3,11 @@
 
 
 def match_ends(words):
+    count = 0
+    for i in words:
+        if len(i) >= 2 and i[0] == i[-1]:
+            count += 1
+    print (count)
     """
     Given a list of strings, return the count of the number of strings
     where the string length is 2 or more and the first and last chars
@@ -15,10 +20,18 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+    # raise NotImplementedError
 
 
 def front_x(words):
+    xs = []
+    others = []
+    for i in sorted(words):
+        if i[0] == 'x':
+            xs.append(i)
+        else:
+            others.append(i)
+    print (xs + others)
     """
     Given a list of strings, return a list with the strings in sorted
     order, except group all the strings that begin with 'x' first.
@@ -32,7 +45,7 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    # raise NotImplementedError
 
 
 def sort_last(tuples):
@@ -49,7 +62,7 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    # raise NotImplementedError
 
 
 def remove_adjacent(nums):
@@ -68,7 +81,7 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
+    # raise NotImplementedError
 
 
 def linear_merge(list1, list2):
@@ -85,4 +98,4 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    # raise NotImplementedError
