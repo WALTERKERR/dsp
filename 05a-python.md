@@ -37,7 +37,7 @@ someList  = [1,2]
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Big differences.  Sets have keys and cannot have duplicate keys.  They are also unordered.  Lists are ordered and can include duplicates.  If you want to be able to sort and have order, go with a list. If you favor accessing via keys and don't care about order, go with a set.
 
 ---
 
@@ -45,8 +45,18 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>>> A lambda is a one-time function, designed for the immediate need and not to be referred to again. For example, using the dictionary below:
+```python
+famous_people_dict_two = {('Bill', 'Clinton'): ['JD', 'Politician', 'Arkansas'], ('George', 'Clinton'): ['High School', 'Musician', 'North Carolina'], ('John', 'Kennedy'): ['JD', 'Politician', 'Massachusetts'], ('William','Kennedy'): ['BA', 'Writer', 'New York'], ('Steve','Kerr'): ['BA', 'Athlete', 'Lebanon'] }
+```
 
+>>> we can use the following lambda function to sort:
+```python
+import collections
+print(collections.OrderedDict(sorted(famous_people_dict_two.items(), ke
+    ...: y=lambda name: name[0][1])))
+
+```
 ---
 
 ### Q4. List Comprehension, Map &amp; Filter
