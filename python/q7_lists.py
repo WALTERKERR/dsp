@@ -49,6 +49,8 @@ def front_x(words):
 
 
 def sort_last(tuples):
+    print(sorted(tuples, key=lambda x: x[1]))
+
     """
     Given a list of non-empty tuples, return a list sorted in
     increasing order by the last element in each tuple.
@@ -65,7 +67,13 @@ def sort_last(tuples):
     # raise NotImplementedError
 
 
+from itertools import groupby
+
 def remove_adjacent(nums):
+    # [n for i, n in enumerate(nums) if i==0 or n != nums[i-1]]
+    # I found the above on stackexchange but don't understand it.  The below also works and I understand it.
+    print([k for k, v in groupby(nums)])
+
     """
     Given a list of numbers, return a list where all adjacent equal
     elements have been reduced to a single element, so [1, 2, 2, 3]
@@ -85,6 +93,8 @@ def remove_adjacent(nums):
 
 
 def linear_merge(list1, list2):
+    new_list = list1 + list2
+    print(sorted(new_list))
     """
     Given two lists sorted in increasing order, create and return a
     merged list of all the elements in sorted order. You may modify
