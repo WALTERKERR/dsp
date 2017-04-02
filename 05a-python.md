@@ -12,7 +12,24 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> A list is mutable a tuple is not.  As a result, you can access the key in a list, but not in a tuple.  In a tuple, order matters, so the the index number (as opposed to its name) of an item is important .  In a list, you can use different data types.  I found this good stackoverflow answer to the list v. tuple discussion:
+```
+Tuples are fixed size in nature whereas lists are dynamic.
+In other words, a tuple is immutable whereas a list is mutable.
+
+You can't add elements to a tuple. Tuples have no append or extend method.
+You can't remove elements from a tuple. Tuples have no remove or pop method.
+You can find elements in a tuple, since this doesn’t change the tuple.
+You can also use the in operator to check if an element exists in the tuple.
+Tuples are faster than lists. If you're defining a constant set of values and all you're ever going to do with it is iterate through it, use a tuple instead of a list.
+It makes your code safer if you “write-protect” data that does not need to be changed. Using a tuple instead of a list is like having an implied assert statement that this data is constant, and that special thought (and a specific function) is required to override that.
+Some tuples can be used as dictionary keys (specifically, tuples that contain immutable values like strings, numbers, and other tuples). Lists can never be used as dictionary keys, because lists are not immutable.
+```
+
+```
+someTuple = (1,2)
+someList  = [1,2]
+```
 
 ---
 
@@ -20,7 +37,7 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Big differences.  Sets have keys and cannot have duplicate keys.  They are also unordered.  Lists are ordered and can include duplicates.  If you want to be able to sort and have order, go with a list. If you favor accessing via keys and don't care about order, go with a set.
 
 ---
 
@@ -28,15 +45,46 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>>> A lambda is a one-time function, designed for the immediate need and not to be referred to again. For example, using the dictionary below:
+```python
+famous_people_dict_two = {('Bill', 'Clinton'): ['JD', 'Politician', 'Arkansas'], ('George', 'Clinton'): ['High School', 'Musician', 'North Carolina'], ('John', 'Kennedy'): ['JD', 'Politician', 'Massachusetts'], ('William','Kennedy'): ['BA', 'Writer', 'New York'], ('Steve','Kerr'): ['BA', 'Athlete', 'Lebanon'] }
+```
 
+>>> we can use the following lambda function to sort:
+```python
+import collections
+print(collections.OrderedDict(sorted(famous_people_dict_two.items(), ke
+    ...: y=lambda name: name[0][1])))
+
+```
 ---
 
 ### Q4. List Comprehension, Map &amp; Filter
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> List comprehensions allow sequences to be built on top of other sequences.  For example, with filter, you can apply a conditional statement to evaluate a series/sequence and then only deal with those values that meet the condition.  With map, you can manipulate items in the sequence themselves.  So, working together, if you had a sequence [1,2,3,4,5,6], you could use filter to choose only even integers within the sequence, and then map to manipulate those selected even values to square them, resulting in a sequence that would look like [4, 16, 36].  With regards to the difference between a set and a dictionary, these bullets from stackexchange provide a good,quick synopsis:
+```
+Do you just need to know whether or not you've already got a particular value, but without ordering (and you don't need to store duplicates)? Use a set.
+Do you need to associate values with keys, so you can look them up efficiently (by key) later on? Use a dictionary.
+```
+Example using map:
+```python
+In [31]: sequence = [1, 2, 3, 4, 5]
+    ...: cubed = list(map(lambda x: x**3, sequence))
+    ...: print(cubed)
+    ...: 
+    ...: 
+[1, 8, 27, 64, 125]
+## This will cube every function within the sequence and produce a new array.
+```
+Example using filter:
+```python
+In [36]: sequence = [1,2,3,4,5]
+    ...: evens  = list(filter(lambda x: not x % 2, sequence))
+    ...: print(evens)
+```
+
 
 ---
 
