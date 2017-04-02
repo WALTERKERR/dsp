@@ -63,7 +63,28 @@ print(collections.OrderedDict(sorted(famous_people_dict_two.items(), ke
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> List comprehensions allow sequences to be built on top of other sequences.  For example, with filter, you can apply a conditional statement to evaluate a series/sequence and then only deal with those values that meet the condition.  With map, you can manipulate items in the sequence themselves.  So, working together, if you had a sequence [1,2,3,4,5,6], you could use filter to choose only even integers within the sequence, and then map to manipulate those selected even values to square them, resulting in a sequence that would look like [4, 16, 36].  With regards to the difference between a set and a dictionary, these bullets from stackexchange provide a good,quick synopsis:
+```
+Do you just need to know whether or not you've already got a particular value, but without ordering (and you don't need to store duplicates)? Use a set.
+Do you need to associate values with keys, so you can look them up efficiently (by key) later on? Use a dictionary.
+```
+Example using map:
+```python
+In [31]: sequence = [1, 2, 3, 4, 5]
+    ...: cubed = list(map(lambda x: x**3, sequence))
+    ...: print(cubed)
+    ...: 
+    ...: 
+[1, 8, 27, 64, 125]
+## This will cube every function within the sequence and produce a new array.
+```
+Example using filter:
+```python
+In [36]: sequence = [1,2,3,4,5]
+    ...: evens  = list(filter(lambda x: not x % 2, sequence))
+    ...: print(evens)
+```
+
 
 ---
 
