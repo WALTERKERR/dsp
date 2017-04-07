@@ -109,7 +109,7 @@ How do frequentist and Bayesian statistics compare?
 
 >>>Bayesian statistics work with known probabilities and then manipulate those probabilities to find more exact answers and probabiltiies.  For example, in the above example, the Bayesian is working with known data that about the probability of the set that is male (approx 1/2), probability of identical twins (1/300), and probability that is fraternal twins (1/125).  To determine the likelihood of all fraternal twins who are male, the Bayesian model multiplies the two before then using that same data to determine the probability that Elvis' twin was an identical twin (i.e. among all possible twins (identical twins (who are necessarily male) and fraternal twins who are male).
 
-Frequentist statistics don't make assumptions like the Bayesian model does.  Frequentists manipulate statistics based on known runs or frequencies, or assume models that are totally random.  Thus, in the case of the Elvis model, a frequentist would likely want to take a sample of known births to determine the probability, and would not assume the 1/2, 1/125, and 1/300 probabilities.  
+>>>Frequentist statistics don't make assumptions like the Bayesian model does.  Frequentists manipulate statistics based on known runs or frequencies, or assume models that are totally random.  Thus, in the case of the Elvis model, a frequentist would likely want to take a sample of known births to determine the probability, and would not assume the 1/2, 1/125, and 1/300 probabilities.  
 
 
 
